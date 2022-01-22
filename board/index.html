@@ -18,7 +18,7 @@
   
     <meta name="description" content="我是谁？">
 <meta property="og:type" content="website">
-<meta property="og:title" content="你一定有很多话想对我说">
+<meta property="og:title" content="友链">
 <meta property="og:url" content="http://example.com/board/index.html">
 <meta property="og:site_name" content="Away的博客">
 <meta property="og:description" content="我是谁？">
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>你一定有很多话想对我说 - Away的博客</title>
+  <title>友链 - Away的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -74,7 +74,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -194,22 +194,18 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/bg/top.jpg') no-repeat center center;
+         style="background: url('/img/bg/a.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="你一定有很多话想对我说">
+            <span class="h2" id="subtitle" title="Hello！my friends">
               
             </span>
 
             
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -220,12 +216,70 @@
     
       <div class="container nopadding-x-md">
         <div class="py-5" id="board"
-          style=margin-top:0>
+          >
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
+
+<div class="row links">
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://liuhd.com/" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+          
+            <div class="link-avatar my-auto">
+              <img src="https://liuhd.com/images/images.jpg" srcset="/img/loading.gif" lazyload alt="浅抹氵记忆的小站"
+                   onerror="this.onerror=null; this.src=this.srcset='/img/avatar.png'"/>
+            </div>
+          
+          <div class="link-text">
+            <div class="link-title">浅抹氵记忆的小站</div>
+            <div class="link-intro">change and challenge</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+</div>
+
+
+  <!-- Custom -->
+  <div class="custom mx-auto">
+    <hr><p>如果你是一个有趣的灵魂，在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Fluid</li><li>简介：Fluid 主题官方博客</li><li>链接：https://hexo.fluid-dev.com</li><li>图片：https://hexo.fluid-dev.com/img/favicon.png</li></ul>
+  </div>
+
+
+
+  <!-- Comments -->
+  <article class="comments" id="comments" lazyload>
+    
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"4UbDrO6nD598bOkJLSAfLfM1-gzGzoHsz","appKey":"dQbC8kGS31h3gBFOtX8VE9nx","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"4ubdro6n.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
 
               </div>
             </div>
