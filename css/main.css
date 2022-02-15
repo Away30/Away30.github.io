@@ -373,6 +373,7 @@ img[lazyload] {
   --navbar-text-color: #fff;
   --scrollbar-color: #c4c6c9;
   --scrollbar-hover-color: #a6a6a6;
+  --talking-bg-color: rgba(249, 250, 251, 1);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -392,6 +393,7 @@ img[lazyload] {
     --navbar-text-color: #d0d0d0;
     --scrollbar-color: #687582;
     --scrollbar-hover-color: #9da8b3;
+    --talking-bg-color: rgba(55, 65, 81, 1);
   }
   :root:not([data-user-color-scheme]) img,
   :root:not([data-user-color-scheme]) .note,
@@ -465,6 +467,7 @@ img[lazyload] {
   --navbar-text-color: #d0d0d0;
   --scrollbar-color: #687582;
   --scrollbar-hover-color: #9da8b3;
+  --talking-bg-color: rgba(55, 65, 81, 1);
 }
 [data-user-color-scheme='dark'] img,
 [data-user-color-scheme='dark'] .note,
