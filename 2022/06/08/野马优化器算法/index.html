@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://example.com/img/野马优化器3.png">
 <meta property="og:image" content="http://example.com/img/野马优化器4.png">
 <meta property="article:published_time" content="2022-06-07T17:54:23.000Z">
-<meta property="article:modified_time" content="2022-07-30T19:01:48.331Z">
+<meta property="article:modified_time" content="2022-07-30T19:15:54.407Z">
 <meta property="article:author" content="Away">
 <meta property="article:tag" content="元启发算法">
 <meta property="article:tag" content="论文">
@@ -298,7 +298,7 @@
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>&emsp;&emsp;算法由Iraj Naruei等人于2021年提出，主要模拟了野马种群的放牧、交配、领导者的交流和选择这三种行为。因其在CEC2017、CEC2019等测试函数上具有较好的实验结果，而在未来具有广泛的应用前景。</p>
 <p> &emsp;&emsp;总体来说，马可以根据其社会组织（领土和非领土）分为两类，在本篇文章，我们重点在于非领土类，它们是由稳定的家庭群体或后宫组成的马群，如小马驹、种马和母马。种马和母马都生活在一起，并在放牧中相互影响。同时为了防止乱伦，小马驹长大后必须离开他们的群体，加入其他群体建立自己的家庭。野马优化器就是使用放牧、交配、领导者的交流和选择这三种行为对问题进行优化。</p>
 <h2 id="主要步骤及过程"><a href="#主要步骤及过程" class="headerlink" title="主要步骤及过程"></a>主要步骤及过程</h2><p><strong>1.</strong> 创建初始种群并形成马群并选择领导者；<br><strong>2.</strong> 马的放牧行为；<br><strong>3.</strong> 马的交配行为；<br><strong>4.</strong> 由领导（种马）领导和领导小组；<br><strong>5.</strong> 领导交流和选拔。</p>
-<h3 id="创建初始种群"><a href="#创建初始种群" class="headerlink" title="创建初始种群"></a>创建初始种群</h3><p> &emsp;&emsp;对初始马群进行分组，如果N是总体的成员数，则组数为是G=[N×PS]. PS 是总种群中种马的百分比。所以我们根据组的数量分出领导者G（种马），其余成员（N - G），在这些组中平均分配。在算法开始时随机选择组的领导者，在后期阶段，根据组成员之间的==适应度（最佳适应度函数）== 来选择他们。<br><img src="/img/野马优化器.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<h3 id="创建初始种群"><a href="#创建初始种群" class="headerlink" title="创建初始种群"></a>创建初始种群</h3><p> &emsp;&emsp;对初始马群进行分组，如果N是总体的成员数，则组数为是G=[N×PS]. PS 是总种群中种马的百分比。所以我们根据组的数量分出领导者G（种马），其余成员（N - G），在这些组中平均分配。在算法开始时随机选择组的领导者，在后期阶段，根据组成员之间的适应度（最佳适应度函数）来选择他们。<br><img src="/img/野马优化器.png" srcset="/img/loading.gif" lazyload alt=" "></p>
 <center>种群初始化示意图</center>
 
 <p><img src="/img/野马优化器2.png" srcset="/img/loading.gif" lazyload alt=" "></p>
