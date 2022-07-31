@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://example.com/img/野马优化器3.png">
 <meta property="og:image" content="http://example.com/img/野马优化器4.png">
 <meta property="article:published_time" content="2022-06-07T17:54:23.000Z">
-<meta property="article:modified_time" content="2022-07-30T19:33:39.767Z">
+<meta property="article:modified_time" content="2022-07-31T03:54:53.072Z">
 <meta property="article:author" content="Away">
 <meta property="article:tag" content="元启发算法">
 <meta property="article:tag" content="论文">
@@ -289,7 +289,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年7月31日 凌晨
+                  本文最后更新于：2022年7月31日 中午
                 
               </p>
             
@@ -612,43 +612,8 @@ X_{G, k}^{p}=\operatorname{Crossover}\left(X_{G, i}^{q}, X_{G, j}^{z}\right), i 
   
 
   
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        loader: {
-          
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://lib.baomitu.com/mathjax/3.2.0/tex-svg.js" ></script>
-
+    <!-- KaTeX -->
+    <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.15.2/katex.min.css" />
   
 
 
@@ -765,43 +730,8 @@ X_{G, k}^{p}=\operatorname{Crossover}\left(X_{G, i}^{q}, X_{G, j}^{z}\right), i 
   
 
   
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        loader: {
-          
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://lib.baomitu.com/mathjax/3.2.0/tex-svg.js" ></script>
-
+    <!-- KaTeX -->
+    <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.15.2/katex.min.css" />
   
 
 
