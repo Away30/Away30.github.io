@@ -16,12 +16,12 @@
   <meta name="author" content="Away">
   <meta name="keywords" content="">
   
-    <meta name="description" content="bs4解析原理: 1.实例化一个BeautifulSoup对象，并且将页面源码数据加载到该对象中 2.通过调用BeautifulSoup对象中相关的属性或者方法进行标签定位和数据提取  如何实例化BeautifulSoup对象: from bs4 import BeautifulSoupBeautifulSoup(参数一,参数二)参数一为文件描述符，参数二为解析器，一般为’lxml’一对象的实例化">
+    <meta name="description" content="bs4解析 原理:  1.实例化一个BeautifulSoup对象，并且将页面源码数据加载到该对象中 2.通过调用BeautifulSoup对象中相关的属性或者方法进行标签定位和数据提取  如何实例化BeautifulSoup对象: from bs4 import BeautifulSoup BeautifulSoup(参数一,参数二) 参数一为文件描述符，参数二为解析器，一般为&#39;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bs4解析和xpath解析">
 <meta property="og:url" content="http://example.com/2022/02/12/python%E7%88%AC%E8%99%AB%E4%B9%8Bbs4%E8%A7%A3%E6%9E%90%E5%92%8Cxpath%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Away的博客">
-<meta property="og:description" content="bs4解析原理: 1.实例化一个BeautifulSoup对象，并且将页面源码数据加载到该对象中 2.通过调用BeautifulSoup对象中相关的属性或者方法进行标签定位和数据提取  如何实例化BeautifulSoup对象: from bs4 import BeautifulSoupBeautifulSoup(参数一,参数二)参数一为文件描述符，参数二为解析器，一般为’lxml’一对象的实例化">
+<meta property="og:description" content="bs4解析 原理:  1.实例化一个BeautifulSoup对象，并且将页面源码数据加载到该对象中 2.通过调用BeautifulSoup对象中相关的属性或者方法进行标签定位和数据提取  如何实例化BeautifulSoup对象: from bs4 import BeautifulSoup BeautifulSoup(参数一,参数二) 参数一为文件描述符，参数二为解析器，一般为&#39;l">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-12T07:50:17.000Z">
 <meta property="article:modified_time" content="2022-02-12T14:42:07.570Z">
@@ -290,37 +290,26 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="bs4解析"><a href="#bs4解析" class="headerlink" title="bs4解析"></a>bs4解析</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理:"></a>原理:</h2><ul>
+              <h1 id="bs4解析">bs4解析</h1>
+<h2 id="原理">原理:</h2>
+<ul>
 <li>1.实例化一个BeautifulSoup对象，并且将页面源码数据加载到该对象中</li>
 <li>2.通过调用BeautifulSoup对象中相关的属性或者方法进行标签定位和数据提取</li>
 </ul>
-<h2 id="如何实例化BeautifulSoup对象"><a href="#如何实例化BeautifulSoup对象" class="headerlink" title="如何实例化BeautifulSoup对象:"></a>如何实例化BeautifulSoup对象:</h2><p> from bs4 import BeautifulSoup<br>BeautifulSoup(参数一,参数二)<br>参数一为文件描述符，参数二为解析器，一般为’lxml’<br>一对象的实例化:</p>
-<ul>
-<li>1.将本地的html文档中的数据加载到该对象中<figure class="highlight ini"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">fp</span> = open( <span class="hljs-string">&#x27;./test.html&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>)<br><span class="hljs-attr">soup</span>=BeautifulSoup(fp,<span class="hljs-string">&#x27;lxml&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
-<li>2.将互联网上获取的页面源码加载到该对象中<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">page_text</span> =response.text<br><span class="hljs-attr">soup</span>=BeatifulSoup(page_text,<span class="hljs-string">&#x27;lxml&#x27;</span>)<br></code></pre></td></tr></table></figure>
-soup指初始化的BeautifulSoup对象</li>
-</ul>
-<h2 id="用于数据解析的方法和属性"><a href="#用于数据解析的方法和属性" class="headerlink" title="用于数据解析的方法和属性:"></a>用于数据解析的方法和属性:</h2><p><strong>1</strong>.soup.tagName:返回的是文档中<strong>第一次</strong>出现的tagName对应的标签<br><strong>2</strong>.soup.find():</p>
-<p>(1).find( ‘tagName’):等同于soup.tagName<br>    (2).属性定位:soup.find(‘div’,class<em>/id/或者其他属性=’song’)<br>    定位到&lt; div class=”song”&gt;/&lt; div id=”song”&gt;的标签下<br>    class如果没有加</em>则代表关键字</p>
-<p><strong>3</strong>.soup.find_all(‘tagName’):返回符合要求的所有标签(列表)<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml">soup对象:<br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tang&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.baidu.com&quot;</span> <span class="hljs-attr">title</span>= <span class="hljs-string">&quot;ging&quot;</span>&gt;</span>清明时节雨纷纷,路上行人欲断魂,借问酒家何处有,牧童遥指杏花村<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>&lt;/1i&gt;<br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.163.com&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;qin&quot;</span>&gt;</span>秦时明月汉时关，万里长征人未还,但使龙城飞将在，不教胡马度阴山<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>&lt;/1i&gt;<br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot; http://ww.126.com&quot;</span><span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;qi &quot;</span>&gt;</span>歧王宅里寻常见，崔九堂前几度闻，正是江南好风景,落花时节又逢君<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http: //www.sina.com&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;du&quot;</span>&gt;</span>杜甫<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.dudu.com&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;du&quot;</span>&gt;</span>杜牧<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>杜小月<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>度蜜月<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://ww.hana.com”id=&quot;</span><span class="hljs-attr">feng</span>&quot;&gt;</span>凤凰台上凤凰游，凤去台空江自流，吴宫花草埋幽径，晋代衣冠成古丘<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure><br><strong>4</strong>.select:</p>
-<div class="code-wrapper"><pre><code class="hljs">- select(&#39;某种选择器(id,class，标签...选择器)&#39;),返回的是一个列表。
-标签什么都不加，class前面加. id前面加#
-</code></pre></div><p>   层级选择器:</p>
-<div class="code-wrapper"><pre><code class="hljs">&gt;表示的是一个层级；空格表示的多个层级
-</code></pre></div>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">   soup.select( <span class="hljs-string">&#x27;.tang &gt; ul &gt; li &gt; a&#x27;</span>) <br>   soup.select( <span class="hljs-string">&#x27;.tang &gt;ul a&#x27;</span>)<br>   结果为：[<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.baidu.com&quot;</span> <span class="hljs-attr">title</span>= <span class="hljs-string">&quot;ging&quot;</span>&gt;</span>清明时节雨纷纷,路上行人欲断魂,借问酒家何处有,牧童遥指杏花村<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.163.com&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;qin&quot;</span>&gt;</span>秦时明月汉时关，万里长征人未还,但使龙城飞将在，不教胡马度阴山<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br>   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot; http://ww.126.com&quot;</span><span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;qi &quot;</span>&gt;</span>歧王宅里寻常见，崔九堂前几度闻，正是江南好风景,落花时节又逢君<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br>   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http: //www.sina.com&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;du&quot;</span>&gt;</span>杜甫<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br>   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.dudu.com&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;du&quot;</span>&gt;</span>杜牧<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br>  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://ww.hana.com”id=&quot;</span><span class="hljs-attr">feng</span>&quot;&gt;</span>凤凰台上凤凰游，凤去台空江自流，吴宫花草埋幽径，晋代衣冠成古丘<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>]<br></code></pre></td></tr></table></figure>
-<p><strong>5</strong>.获取标签之间的文本数据:<br>    -soup.a.text/string/get_text()<br>    -text/get_text():可以获取某一个标签中所有的文本内容<br>    -string:只可以获取该标签下面直系的文本内容<br><strong>6</strong>.获取标签中属性值:<br>soup.a[‘属性值’]<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(soup.select( <span class="hljs-string">&#x27;.tang &gt; ul &gt; li &gt; a&#x27;</span>)</span></span> <span class="hljs-selector-attr">[0]</span><span class="hljs-selector-attr">[<span class="hljs-string">&#x27;href&#x27;</span>]</span>)<br>结果：<br>www<span class="hljs-selector-class">.baidu</span>.com<br></code></pre></td></tr></table></figure></p>
-<h1 id="xpath解析"><a href="#xpath解析" class="headerlink" title="xpath解析"></a>xpath解析</h1><p>最常用且最便捷高效的一种解析方式。通用性。</p>
-<h2 id="xpath解析原理"><a href="#xpath解析原理" class="headerlink" title="xpath解析原理:"></a>xpath解析原理:</h2><p>1.实例化一个etree的对象，且需要将被解析的页面源码数据加载到该对象中。<br>2调用etree对象中的xpath方法结合着xpath表达式实现标签的定位和内容的捕获。</p>
-<h2 id="实例化一个etree对象"><a href="#实例化一个etree对象" class="headerlink" title="实例化一个etree对象:"></a>实例化一个etree对象:</h2><p>from lxml import etree<br>    -1.将本地的html文档中的源码数据加载到etree对象中:<br>    <figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">etree.parse<span class="hljs-comment">(filePath)</span><br></code></pre></td></tr></table></figure><br>    -2.可以将从互联网上获取的源码数据加载到该对象中<br>       <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">etree</span><span class="hljs-selector-class">.HTML</span>( <span class="hljs-string">&#x27;page_text&#x27;</span>)<br></code></pre></td></tr></table></figure></p>
-<h2 id="xpath-‘xpath表达式’"><a href="#xpath-‘xpath表达式’" class="headerlink" title="xpath( ‘xpath表达式’)"></a>xpath( ‘xpath表达式’)</h2><p>xpath表达式:(返回一个列表)<br>-/:表示的是从根节点开始定位。表示的是一个层级。<br>-//:表示的是多个层级。可以表示从任意位置开始定位。<br>-属性定位://div[@class=’song’] tag[@attrname=’attrvalue’]<br>-索引定位：//div[@class=’song’]/p[3]<br>索引从1开始的</p>
-<p>取文本:</p>
-<ul>
-<li>/text(）获取的是标签中直系的文本内容</li>
-<li>//text(标签中非直系的文本内容(所有的文本内容)</li>
-</ul>
-<p>取属性:<br>/@attrName<br>eg:/img/@src</p>
+<h2 id="如何实例化beautifulsoup对象">如何实例化BeautifulSoup对象:</h2>
+<p>from bs4 import BeautifulSoup BeautifulSoup(参数一,参数二) 参数一为文件描述符，参数二为解析器，一般为'lxml' 一对象的实例化: - 1.将本地的html文档中的数据加载到该对象中 <figure class="highlight ini"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">fp</span> = open( <span class="hljs-string">&#x27;./test.html&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>)<br><span class="hljs-attr">soup</span>=BeautifulSoup(fp,<span class="hljs-string">&#x27;lxml&#x27;</span>)<br></code></pre></td></tr></table></figure> - 2.将互联网上获取的页面源码加载到该对象中 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">page_text</span> =response.text<br><span class="hljs-attr">soup</span>=BeatifulSoup(page_text,<span class="hljs-string">&#x27;lxml&#x27;</span>)<br></code></pre></td></tr></table></figure> soup指初始化的BeautifulSoup对象</p>
+<h2 id="用于数据解析的方法和属性">用于数据解析的方法和属性:</h2>
+<p><strong>1</strong>.soup.tagName:返回的是文档中<strong>第一次</strong>出现的tagName对应的标签 <strong>2</strong>.soup.find():</p>
+<p>(1).find( 'tagName'):等同于soup.tagName (2).属性定位:soup.find('div',class_/id/或者其他属性='song') 定位到&lt; div class=&quot;song&quot;&gt;/&lt; div id=&quot;song&quot;&gt;的标签下 class如果没有加_则代表关键字</p>
+<p><strong>3</strong>.soup.find_all('tagName'):返回符合要求的所有标签(列表) <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml">soup对象:<br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tang&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.baidu.com&quot;</span> <span class="hljs-attr">title</span>= <span class="hljs-string">&quot;ging&quot;</span>&gt;</span>清明时节雨纷纷,路上行人欲断魂,借问酒家何处有,牧童遥指杏花村<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>&lt;/1i&gt;<br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.163.com&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;qin&quot;</span>&gt;</span>秦时明月汉时关，万里长征人未还,但使龙城飞将在，不教胡马度阴山<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>&lt;/1i&gt;<br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot; http://ww.126.com&quot;</span><span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;qi &quot;</span>&gt;</span>歧王宅里寻常见，崔九堂前几度闻，正是江南好风景,落花时节又逢君<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http: //www.sina.com&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;du&quot;</span>&gt;</span>杜甫<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.dudu.com&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;du&quot;</span>&gt;</span>杜牧<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>杜小月<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>度蜜月<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://ww.hana.com”id=&quot;</span><span class="hljs-attr">feng</span>&quot;&gt;</span>凤凰台上凤凰游，凤去台空江自流，吴宫花草埋幽径，晋代衣冠成古丘<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure> <strong>4</strong>.select: - select('某种选择器(id,class，标签...选择器)'),返回的是一个列表。 标签什么都不加，class前面加. id前面加#</p>
+<p>层级选择器: &gt;表示的是一个层级；空格表示的多个层级 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">   soup.select( <span class="hljs-string">&#x27;.tang &gt; ul &gt; li &gt; a&#x27;</span>) <br>   soup.select( <span class="hljs-string">&#x27;.tang &gt;ul a&#x27;</span>)<br>   结果为：[<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.baidu.com&quot;</span> <span class="hljs-attr">title</span>= <span class="hljs-string">&quot;ging&quot;</span>&gt;</span>清明时节雨纷纷,路上行人欲断魂,借问酒家何处有,牧童遥指杏花村<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.163.com&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;qin&quot;</span>&gt;</span>秦时明月汉时关，万里长征人未还,但使龙城飞将在，不教胡马度阴山<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br>   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot; http://ww.126.com&quot;</span><span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;qi &quot;</span>&gt;</span>歧王宅里寻常见，崔九堂前几度闻，正是江南好风景,落花时节又逢君<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br>   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http: //www.sina.com&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;du&quot;</span>&gt;</span>杜甫<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br>   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.dudu.com&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;du&quot;</span>&gt;</span>杜牧<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>,<br>  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://ww.hana.com”id=&quot;</span><span class="hljs-attr">feng</span>&quot;&gt;</span>凤凰台上凤凰游，凤去台空江自流，吴宫花草埋幽径，晋代衣冠成古丘<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>]<br></code></pre></td></tr></table></figure> <strong>5</strong>.获取标签之间的文本数据: -soup.a.text/string/get_text() -text/get_text():可以获取某一个标签中所有的文本内容 -string:只可以获取该标签下面直系的文本内容 <strong>6</strong>.获取标签中属性值: soup.a['属性值'] <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(soup.select( <span class="hljs-string">&#x27;.tang &gt; ul &gt; li &gt; a&#x27;</span>)</span></span> <span class="hljs-selector-attr">[0]</span><span class="hljs-selector-attr">[<span class="hljs-string">&#x27;href&#x27;</span>]</span>)<br>结果：<br>www<span class="hljs-selector-class">.baidu</span>.com<br></code></pre></td></tr></table></figure> # xpath解析 最常用且最便捷高效的一种解析方式。通用性。 ## xpath解析原理: 1.实例化一个etree的对象，且需要将被解析的页面源码数据加载到该对象中。 2调用etree对象中的xpath方法结合着xpath表达式实现标签的定位和内容的捕获。</p>
+<h2 id="实例化一个etree对象">实例化一个etree对象:</h2>
+<p>from lxml import etree -1.将本地的html文档中的源码数据加载到etree对象中: <figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">etree.parse<span class="hljs-comment">(filePath)</span><br></code></pre></td></tr></table></figure> -2.可以将从互联网上获取的源码数据加载到该对象中 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">etree</span><span class="hljs-selector-class">.HTML</span>( <span class="hljs-string">&#x27;page_text&#x27;</span>)<br></code></pre></td></tr></table></figure> ## xpath( 'xpath表达式') xpath表达式:(返回一个列表) -/:表示的是从根节点开始定位。表示的是一个层级。 -//:表示的是多个层级。可以表示从任意位置开始定位。 -属性定位://div<span class="citation" data-cites="class">[@class='song']</span> tag<span class="citation" data-cites="attrname">[@attrname='attrvalue']</span> -索引定位：//div<span class="citation" data-cites="class">[@class='song']</span>/p[3] 索引从1开始的</p>
+<p>取文本: - /text(）获取的是标签中直系的文本内容 - //text(标签中非直系的文本内容(所有的文本内容)</p>
+<p>取属性: /<span class="citation" data-cites="attrName">@attrName</span><br />
+eg:/img/<span class="citation" data-cites="src">@src</span></p>
 <p>./表示定位到当前位置（局部解析）</p>
-<p>多个xpath之间用|分割:<br>tree.xpath(‘//div[@class=’song’]/p[3] | //div[@class=’song’]’)</p>
+<p>多个xpath之间用|分割: tree.xpath('//div<span class="citation" data-cites="class">[@class='song']</span>/p[3] | //div<span class="citation" data-cites="class">[@class='song']</span>')</p>
 
             </div>
             <hr>
@@ -612,8 +601,43 @@ soup指初始化的BeautifulSoup对象</li>
   
 
   
-    <!-- KaTeX -->
-    <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.15.2/katex.min.css" />
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://lib.baomitu.com/mathjax/3.2.0/tex-svg.js" ></script>
+
   
 
 
@@ -730,8 +754,43 @@ soup指初始化的BeautifulSoup对象</li>
   
 
   
-    <!-- KaTeX -->
-    <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.15.2/katex.min.css" />
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://lib.baomitu.com/mathjax/3.2.0/tex-svg.js" ></script>
+
   
 
 
