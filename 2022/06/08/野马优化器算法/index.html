@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://example.com/img/野马优化器3.png">
 <meta property="og:image" content="http://example.com/img/野马优化器4.png">
 <meta property="article:published_time" content="2022-06-07T17:54:23.000Z">
-<meta property="article:modified_time" content="2022-08-01T10:00:38.747Z">
+<meta property="article:modified_time" content="2022-08-01T10:25:13.853Z">
 <meta property="article:author" content="Away">
 <meta property="article:tag" content="元启发算法">
 <meta property="article:tag" content="论文">
@@ -311,9 +311,9 @@
 原始种群形成群体的过程图
 </center>
 <h3 id="放牧行为">放牧行为</h3>
-<p>  如上一节所述，小马驹通常大部分时间都在他们的群体周围吃草。为了实现放牧行为，我们将种马视为放牧区的中心，群体成员在中心周围搜索（放牧）：</p>
-<p>X_{G, j}^{i}=2 Z (2 R Z) (<em>{G, j}-X</em>{G, j}^{i})+_{G, j}</p>
-<p>  式中Stallion为领导者的位置，R 为[-2,2]内的随机数，主要控制个体与领导者间的角度，自适应机制Z 的计算方式为：</p>
+<p>  如上一节所述，小马驹通常大部分时间都在他们的群体周围吃草。为了实现放牧行为，我们将种马视为放牧区的中心，群体成员在中心周围搜索（放牧）： <span class="math display">\[
+X_{G, j}^{i}=2 Z \cos (2 \pi R Z) \times\left(\text { Stallion }_{G, j}-X_{G, j}^{i}\right)+\text { Stallion }_{G, j}
+\]</span>   式中Stallion为领导者的位置，R 为[-2,2]内的随机数，主要控制个体与领导者间的角度，自适应机制Z 的计算方式为：</p>
 <p><span class="math display">\[
 P=\vec{R} 1&lt;T D R, I D X=(P==0) ; \quad Z=R 2 \Theta I D X+\vec{R} 3 \Theta(\sim I D X)
 \]</span></p>
@@ -403,6 +403,34 @@ X_{G, k}^{p}=\operatorname{Crossover}\left(X_{G, i}^{q}, X_{G, j}^{z}\right), i 
               
             </div>
 
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.16/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"4UbDrO6nD598bOkJLSAfLfM1-gzGzoHsz","appKey":"dQbC8kGS31h3gBFOtX8VE9nx","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":null,"emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+              </article>
             
           </article>
         </div>
