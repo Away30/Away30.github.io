@@ -94,7 +94,14 @@
   }
 
   function addCount(Counter) {
-    var enableIncr = CONFIG.web_analytics.enable && validHost();
+    // Do not even query the counter service on a local preview. The old
+    // implementation skipped increments but still made GET requests, which
+    // produced noisy 400 responses from an unavailable legacy endpoint.
+    if (!validHost()) {
+      return;
+    }
+
+    var enableIncr = CONFIG.web_analytics.enable;
     var getterArr = [];
     var incrArr = [];
 

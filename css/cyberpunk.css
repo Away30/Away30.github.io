@@ -1,0 +1,911 @@
+/*
+ * Away's space / deep-space archive skin
+ * Loaded after Fluid's default stylesheet so the original templates and
+ * modules stay intact while the visual language moves to a darker terminal UI.
+ */
+
+:root,
+html:not([data-user-color-scheme]),
+html[data-user-color-scheme='light'],
+html[data-user-color-scheme='dark'] {
+  --cyber-bg: #070b10;
+  --cyber-bg-soft: #0d151d;
+  --cyber-panel: rgba(12, 22, 30, 0.9);
+  --cyber-panel-strong: #0b151e;
+  --cyber-ink: #e6f4f4;
+  --cyber-muted: #91a8b2;
+  --cyber-dim: #526975;
+  --cyber-cyan: #77f5e2;
+  --cyber-cyan-soft: rgba(119, 245, 226, 0.16);
+  --cyber-orange: #ff9f55;
+  --cyber-orange-soft: rgba(255, 159, 85, 0.16);
+  --cyber-lime: #c6f36b;
+  --cyber-line: rgba(119, 245, 226, 0.24);
+  --cyber-line-soft: rgba(145, 168, 178, 0.15);
+  --cyber-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+  --body-bg-color: var(--cyber-bg);
+  --board-bg-color: var(--cyber-panel);
+  --text-color: var(--cyber-ink);
+  --sec-text-color: var(--cyber-muted);
+  --post-text-color: #d5e6e8;
+  --post-heading-color: #f0fbf8;
+  --post-link-color: var(--cyber-cyan);
+  --link-hover-color: var(--cyber-lime);
+  --link-hover-bg-color: var(--cyber-cyan-soft);
+  --navbar-bg-color: rgba(7, 13, 18, 0.92);
+  --navbar-text-color: var(--cyber-ink);
+  --scrollbar-color: #31515b;
+  --scrollbar-hover-color: var(--cyber-cyan);
+  --talking-bg-color: var(--cyber-panel);
+}
+
+html[data-user-color-scheme='light'] {
+  --cyber-bg: #e8f1ef;
+  --cyber-bg-soft: #dbe9e7;
+  --cyber-panel: rgba(246, 252, 250, 0.94);
+  --cyber-panel-strong: #f8fdfc;
+  --cyber-ink: #10232a;
+  --cyber-muted: #4f6971;
+  --cyber-dim: #718b91;
+  --cyber-cyan: #087d78;
+  --cyber-cyan-soft: rgba(8, 125, 120, 0.1);
+  --cyber-orange: #b85d22;
+  --cyber-orange-soft: rgba(184, 93, 34, 0.1);
+  --cyber-lime: #527a18;
+  --cyber-line: rgba(8, 125, 120, 0.27);
+  --cyber-line-soft: rgba(16, 35, 42, 0.14);
+  --cyber-shadow: 0 24px 70px rgba(39, 74, 78, 0.18);
+  --body-bg-color: var(--cyber-bg);
+  --board-bg-color: var(--cyber-panel);
+  --text-color: var(--cyber-ink);
+  --sec-text-color: var(--cyber-muted);
+  --post-text-color: #223b42;
+  --post-heading-color: #10232a;
+  --post-link-color: var(--cyber-cyan);
+  --link-hover-color: var(--cyber-lime);
+  --link-hover-bg-color: var(--cyber-cyan-soft);
+  --navbar-bg-color: rgba(232, 241, 239, 0.92);
+  --navbar-text-color: var(--cyber-ink);
+  --scrollbar-color: #8ea9aa;
+  --scrollbar-hover-color: var(--cyber-cyan);
+  --talking-bg-color: var(--cyber-panel);
+}
+
+html {
+  background: var(--cyber-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--cyber-bg);
+  color: var(--cyber-ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.015em;
+}
+
+body::before {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.48;
+  background-image:
+    linear-gradient(rgba(119, 245, 226, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(119, 245, 226, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 76% 16%, rgba(255, 159, 85, 0.1), transparent 22rem),
+    radial-gradient(circle at 10% 62%, rgba(119, 245, 226, 0.08), transparent 26rem);
+  background-size: 42px 42px, 42px 42px, auto, auto;
+  mix-blend-mode: screen;
+}
+
+body > * {
+  position: relative;
+}
+
+body a {
+  color: var(--cyber-cyan);
+}
+
+body a:hover {
+  color: var(--cyber-lime);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--cyber-orange);
+  outline-offset: 3px;
+}
+
+/* A slim local-only read position indicator. */
+.cyber-scroll-progress {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  pointer-events: none;
+  background: var(--cyber-cyan);
+  box-shadow: 0 0 12px var(--cyber-cyan);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* Navigation: familiar structure, terminal styling. */
+#navbar.navbar {
+  min-height: 68px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 1px solid rgba(119, 245, 226, 0.14);
+  background: rgba(6, 12, 17, 0.44) !important;
+  box-shadow: none;
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+}
+
+html[data-user-color-scheme='light'] #navbar.navbar {
+  border-bottom-color: rgba(8, 125, 120, 0.2);
+  background: rgba(232, 241, 239, 0.88) !important;
+}
+
+#navbar .container {
+  display: flex;
+  align-items: center;
+  width: min(100% - 2rem, 1320px);
+  max-width: 1320px;
+}
+
+#navbar .container::before {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  content: "01 / ARCHIVE";
+  color: var(--cyber-orange);
+  font: 700 0.66rem/1 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.15em;
+}
+
+#navbar .navbar-brand {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-right: auto;
+  color: var(--cyber-ink);
+  font-family: "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+#navbar .navbar-brand::before {
+  margin-right: 0.5rem;
+  color: var(--cyber-cyan);
+  content: "▹";
+  font-size: 1.1rem;
+}
+
+#navbar .nav-item .nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0.5rem 0.12rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid transparent;
+  color: var(--cyber-muted);
+  font: 700 0.72rem/1.2 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#navbar .nav-item .nav-link i {
+  margin-right: 0.34rem;
+  color: var(--cyber-orange);
+}
+
+#navbar .nav-item .nav-link:hover,
+#navbar .nav-item.cyber-active .nav-link,
+#navbar #search-btn .nav-link:hover,
+#navbar #color-toggle-btn .nav-link:hover {
+  border-color: var(--cyber-line);
+  color: var(--cyber-cyan);
+  background: var(--cyber-cyan-soft);
+}
+
+#navbar .nav-item.cyber-active .nav-link::after {
+  position: absolute;
+  bottom: 0.22rem;
+  width: 1rem;
+  height: 2px;
+  content: "";
+  background: var(--cyber-orange);
+  box-shadow: 0 0 9px var(--cyber-orange);
+}
+
+#navbar .dropdown-menu {
+  border: 1px solid var(--cyber-line);
+  border-radius: 2px;
+  background: rgba(7, 15, 21, 0.96);
+  box-shadow: var(--cyber-shadow);
+}
+
+#navbar .dropdown-item {
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  color: var(--cyber-muted);
+}
+
+#navbar .dropdown-item:hover,
+#navbar .dropdown-item:focus {
+  color: var(--cyber-cyan);
+  background: var(--cyber-cyan-soft);
+}
+
+/* Hero: keep the original space-station image, add an instrument readout. */
+header {
+  background: var(--cyber-bg);
+}
+
+#banner {
+  isolation: isolate;
+  background-color: var(--cyber-bg);
+}
+
+#banner::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  border-bottom: 1px solid rgba(119, 245, 226, 0.25);
+  background:
+    linear-gradient(90deg, rgba(4, 10, 15, 0.94) 0%, rgba(4, 10, 15, 0.54) 46%, rgba(4, 10, 15, 0.2) 75%, rgba(4, 10, 15, 0.72) 100%),
+    repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(119, 245, 226, 0.025) 4px, transparent 5px);
+}
+
+#banner .full-bg-img,
+#banner .mask {
+  z-index: 1;
+}
+
+#banner .mask {
+  background: linear-gradient(90deg, rgba(4, 10, 15, 0.72), rgba(4, 10, 15, 0.22) 58%, rgba(4, 10, 15, 0.46)) !important;
+}
+
+#banner .page-header {
+  position: relative;
+  width: min(88%, 1120px);
+  max-width: 1120px;
+  color: var(--cyber-ink);
+  text-align: left;
+}
+
+#banner .page-header::before {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--cyber-orange);
+  content: "SIGNAL FOUND  /  AWAY'S SPACE";
+  font: 700 0.7rem/1.4 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.22em;
+}
+
+#banner .page-header::after {
+  display: block;
+  width: 11rem;
+  margin-top: 1.6rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--cyber-line);
+  color: var(--cyber-muted);
+  content: "LOCAL NODE  /  READ ONLY";
+  font: 700 0.62rem/1.4 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.14em;
+}
+
+#subtitle {
+  display: inline-block;
+  max-width: 100%;
+  color: #f2fffc;
+  font-family: "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  font-size: clamp(2.3rem, 5.8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 26px rgba(119, 245, 226, 0.18);
+}
+
+.post-meta {
+  color: var(--cyber-muted);
+}
+
+#banner .page-header .post-metas {
+  justify-content: flex-start;
+  margin-top: 1.4rem;
+  padding: 0.75rem 0.9rem;
+  border-left: 2px solid var(--cyber-orange);
+  background: rgba(5, 12, 17, 0.46);
+  font: 0.72rem/1.6 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+}
+
+.scroll-down-bar {
+  color: var(--cyber-cyan);
+  text-shadow: 0 0 12px var(--cyber-cyan);
+}
+
+.scroll-down-bar::after {
+  display: block;
+  margin-top: 0.45rem;
+  content: "SCROLL";
+  font: 700 0.55rem/1 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.16em;
+}
+
+/* Main board and index: readable content inside a hard-edged archive shell. */
+#board {
+  margin-top: -3.2rem;
+  border: 1px solid var(--cyber-line);
+  border-radius: 3px;
+  background: var(--cyber-panel);
+  box-shadow: var(--cyber-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+#board::before,
+#board::after {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  content: "";
+  pointer-events: none;
+}
+
+#board::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--cyber-orange);
+  border-left: 2px solid var(--cyber-orange);
+}
+
+#board::after {
+  right: -1px;
+  bottom: -1px;
+  border-right: 2px solid var(--cyber-cyan);
+  border-bottom: 2px solid var(--cyber-cyan);
+}
+
+body.cyber-home #board {
+  counter-reset: archive-log;
+}
+
+.index-card {
+  position: relative;
+  margin-right: 0;
+  margin-bottom: 1.25rem;
+  margin-left: 0;
+  padding: 1.35rem;
+  border: 1px solid var(--cyber-line-soft);
+  border-radius: 2px;
+  background: rgba(8, 17, 24, 0.68);
+  counter-increment: archive-log;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.index-card::before {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.85rem;
+  color: var(--cyber-dim);
+  content: "LOG // " counter(archive-log, decimal-leading-zero);
+  font: 700 0.58rem/1 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.12em;
+}
+
+.index-card:hover {
+  border-color: var(--cyber-cyan);
+  background: rgba(10, 29, 35, 0.82);
+  transform: translateX(4px);
+}
+
+.index-img {
+  padding-right: 1.25rem;
+}
+
+.index-img img {
+  height: 11rem;
+  border: 1px solid var(--cyber-line);
+  border-radius: 1px;
+  box-shadow: none;
+  filter: saturate(0.72) contrast(1.1);
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.index-card:hover .index-img img {
+  filter: saturate(1) contrast(1.06);
+  transform: scale(1.015);
+}
+
+.index-info {
+  padding-top: 1.1rem;
+  padding-bottom: 0.45rem;
+}
+
+.index-header {
+  max-width: calc(100% - 5rem);
+  margin-bottom: 0.5rem;
+  color: var(--cyber-ink);
+  font-family: "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.index-header a {
+  color: inherit;
+}
+
+.index-header a:hover {
+  color: var(--cyber-cyan);
+}
+
+.index-pin {
+  color: var(--cyber-orange) !important;
+}
+
+.index-excerpt {
+  max-width: 58rem;
+  color: var(--cyber-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.index-excerpt a {
+  color: inherit;
+}
+
+.index-btm {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--cyber-line-soft);
+  font: 0.7rem/1.7 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.03em;
+}
+
+.index-btm .post-meta {
+  margin-right: 0.9rem !important;
+}
+
+/* Article typography and its supporting modules. */
+.post-content,
+.post-custom {
+  padding-right: 9%;
+  padding-left: 9%;
+}
+
+.markdown-body {
+  color: var(--cyber-ink);
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  color: var(--cyber-ink);
+  font-family: "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.02em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--cyber-line-soft);
+}
+
+.markdown-body h2::before,
+.markdown-body h3::before {
+  margin-right: 0.55rem;
+  color: var(--cyber-orange);
+  content: "//";
+  font-size: 0.72em;
+}
+
+.markdown-body strong {
+  color: var(--cyber-cyan);
+}
+
+.markdown-body a {
+  color: var(--cyber-cyan);
+  text-decoration: underline;
+  text-decoration-color: rgba(119, 245, 226, 0.35);
+  text-underline-offset: 0.18em;
+}
+
+.markdown-body a:hover {
+  color: var(--cyber-lime);
+  text-decoration-color: var(--cyber-lime);
+}
+
+.markdown-body blockquote {
+  margin: 1.5rem 0;
+  padding: 0.85rem 1.2rem;
+  border-left: 2px solid var(--cyber-orange);
+  background: rgba(255, 159, 85, 0.07);
+}
+
+.markdown-body :not(pre) > code {
+  padding: 0.14em 0.35em;
+  border: 1px solid var(--cyber-line-soft);
+  border-radius: 2px;
+  color: var(--cyber-lime);
+  background: var(--cyber-cyan-soft);
+  font-family: "SFMono-Regular", "Cascadia Code", "Menlo", monospace;
+}
+
+.markdown-body pre {
+  position: relative;
+  border: 1px solid var(--cyber-line);
+  border-radius: 2px;
+  background: #050b10 !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+.markdown-body pre::before {
+  display: block;
+  height: 1.7rem;
+  margin: -1rem -1rem 0.8rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--cyber-line-soft);
+  color: var(--cyber-orange);
+  content: "CODE / STREAM";
+  font: 700 0.58rem/1 "SFMono-Regular", "Cascadia Code", "Menlo", monospace;
+  letter-spacing: 0.14em;
+}
+
+.markdown-body pre code,
+.markdown-body pre .hljs {
+  color: #d8f8f1;
+  background: transparent !important;
+}
+
+.markdown-body table {
+  overflow: hidden;
+  border: 1px solid var(--cyber-line-soft);
+  border-radius: 2px;
+}
+
+.markdown-body table tr,
+.markdown-body table tr:nth-child(2n) {
+  background: rgba(119, 245, 226, 0.035);
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  border-color: var(--cyber-line-soft);
+}
+
+.markdown-body hr,
+hr {
+  border-top-color: var(--cyber-line-soft);
+}
+
+.markdown-body p > img,
+.markdown-body p > a > img {
+  border: 1px solid var(--cyber-line);
+  border-radius: 1px;
+  box-shadow: none;
+}
+
+.post-metas {
+  color: var(--cyber-muted);
+}
+
+.post-metas a {
+  color: var(--cyber-cyan);
+}
+
+.post-prevnext {
+  gap: 0.75rem;
+}
+
+.post-prevnext .post-prev,
+.post-prevnext .post-next {
+  min-height: 44px;
+  padding: 0.75rem;
+  border: 1px solid var(--cyber-line-soft);
+  background: rgba(119, 245, 226, 0.035);
+}
+
+.post-prevnext .post-prev:hover,
+.post-prevnext .post-next:hover {
+  border-color: var(--cyber-cyan);
+  background: var(--cyber-cyan-soft);
+}
+
+#toc {
+  padding-top: 3rem;
+}
+
+.toc-header {
+  color: var(--cyber-orange);
+  font: 700 0.75rem/1.4 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tocbot-link {
+  color: var(--cyber-muted);
+}
+
+.tocbot-active-link {
+  color: var(--cyber-cyan);
+}
+
+/* Archive, category, tag, links and search keep their original information architecture. */
+.list-group,
+.category,
+.links {
+  color: var(--cyber-ink);
+}
+
+.list-group a.list-group-item,
+.list-group-item,
+.links .card-body {
+  border-color: var(--cyber-line-soft);
+  border-radius: 2px;
+  color: var(--cyber-ink);
+  background: rgba(119, 245, 226, 0.035);
+}
+
+.list-group a.list-group-item:hover,
+.list-group a.list-group-item:focus,
+.links .card-body:hover {
+  border-color: var(--cyber-cyan);
+  color: var(--cyber-cyan);
+  background: var(--cyber-cyan-soft);
+}
+
+.category-item-action:hover,
+.category-item-action:focus {
+  border-color: var(--cyber-line);
+  color: var(--cyber-cyan);
+  background: var(--cyber-cyan-soft);
+}
+
+.tagcloud a {
+  margin: 0.2rem;
+  border-bottom: 1px solid var(--cyber-line-soft);
+  color: var(--cyber-cyan) !important;
+  font-family: "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+}
+
+.tagcloud a:hover {
+  border-color: var(--cyber-lime);
+  background: var(--cyber-cyan-soft);
+}
+
+.links .card-body {
+  border: 1px solid var(--cyber-line-soft);
+}
+
+.link-title {
+  color: var(--cyber-ink);
+  font-family: "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+}
+
+.link-avatar img {
+  border: 1px solid var(--cyber-cyan);
+  border-radius: 2px;
+}
+
+.about-avatar img {
+  border: 2px solid var(--cyber-cyan);
+  box-shadow: 0 0 0 6px rgba(119, 245, 226, 0.08), 0 0 24px rgba(119, 245, 226, 0.28);
+}
+
+.about-name,
+.about-intro {
+  color: var(--cyber-ink);
+}
+
+#local-search-result .search-list-title {
+  color: var(--cyber-cyan);
+}
+
+#local-search-result .search-list-content {
+  color: var(--cyber-muted);
+}
+
+#modalSearch .modal-content {
+  border: 1px solid var(--cyber-cyan);
+  border-radius: 2px;
+  background: rgba(7, 15, 21, 0.97);
+  box-shadow: var(--cyber-shadow), 0 0 30px rgba(119, 245, 226, 0.12);
+}
+
+#modalSearch .modal-header {
+  border-bottom-color: var(--cyber-line-soft);
+}
+
+#modalSearch .modal-title {
+  color: var(--cyber-cyan);
+  font-family: "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.08em;
+}
+
+#modalSearch input {
+  min-height: 44px;
+  border: 1px solid var(--cyber-line);
+  border-radius: 2px;
+  color: var(--cyber-ink);
+  background: rgba(119, 245, 226, 0.06);
+}
+
+#modalSearch input:focus {
+  border-color: var(--cyber-cyan);
+  box-shadow: 0 0 0 2px rgba(119, 245, 226, 0.12);
+}
+
+/* Footer: make the old uptime/statistics module read like telemetry. */
+footer {
+  margin-top: 4rem !important;
+  border-top: 1px solid var(--cyber-line-soft);
+  color: var(--cyber-muted);
+  font: 0.72rem/1.7 "SFMono-Regular", "Cascadia Code", "Menlo", "PingFang SC", monospace;
+  letter-spacing: 0.04em;
+}
+
+footer a {
+  color: var(--cyber-cyan);
+}
+
+footer .icon-love {
+  color: var(--cyber-orange);
+}
+
+footer .statistics {
+  color: var(--cyber-dim);
+}
+
+#scroll-top-button {
+  right: 1.25rem !important;
+  bottom: 1.25rem !important;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--cyber-line);
+  border-radius: 2px;
+  color: var(--cyber-cyan);
+  background: var(--cyber-panel-strong);
+  box-shadow: none;
+}
+
+#scroll-top-button:hover {
+  border-color: var(--cyber-cyan);
+  color: var(--cyber-lime);
+  background: var(--cyber-cyan-soft);
+}
+
+/* Mobile keeps the same hierarchy and makes every important target touchable. */
+@media (min-width: 768px) {
+  .index-info {
+    border-left: 1px solid var(--cyber-line-soft);
+  }
+}
+
+@media (max-width: 991.98px) {
+  #navbar.navbar {
+    background: rgba(6, 12, 17, 0.9) !important;
+  }
+
+  #navbar .container::before {
+    display: none;
+  }
+
+  #navbar .navbar-collapse {
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--cyber-line-soft);
+  }
+
+  #navbar .nav-item .nav-link {
+    justify-content: center;
+    width: 100%;
+    margin: 0.15rem 0;
+  }
+
+  #navbar .nav-item.cyber-active .nav-link::after {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #banner .page-header {
+    width: 86%;
+  }
+
+  #banner .page-header::before {
+    margin-bottom: 1rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+  }
+
+  #subtitle {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  #board {
+    margin-top: -1.75rem;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+
+  .index-card {
+    padding: 1rem;
+  }
+
+  .index-img {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .index-img img {
+    height: 12rem;
+  }
+
+  .index-info {
+    padding-top: 1.35rem;
+  }
+
+  .post-content,
+  .post-custom {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .markdown-body {
+    font-size: 1rem;
+  }
+
+  .toc-container {
+    display: none !important;
+  }
+}
+
+@media (max-width: 424px) {
+  #navbar .navbar-brand {
+    max-width: calc(100% - 52px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+
+  .index-card::before {
+    display: none;
+  }
+
+  .post-content,
+  .post-custom {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=dark>
 
 
 
@@ -16,24 +16,24 @@
   <meta name="author" content="Away">
   <meta name="keywords" content="">
   
-    <meta name="description" content="开始   还记得那是一个普通的周末，为了应付老师的要求，不得不重新去看新的算法论文，然后就看到了这个野马优化器算法，2021年提出的，也算是一种缘分吧。 引言   算法由Iraj Naruei等人于2021年提出，主要模拟了野马种群的放牧、交配、领导者的交流和选择这三种行为。因其在CEC2017、CEC2019等测试函数上具有较好的实验结果，而在未来具有广泛的应用前景。   总体来说，马可">
+    <meta name="description" content="开始   还记得那是一个普通的周末，为了应付老师的要求，不得不重新去看新的算法论文，然后就看到了这个野马优化器算法，2021年提出的，也算是一种缘分吧。  引言   算法由Iraj Naruei等人于2021年提出，主要模拟了野马种群的放牧、交配、领导者的交流和选择这三种行为。因其在CEC2017、CEC2019等测试函数上具有较好的实验结果，而在未来具有广泛的应用前景。   总体来说，马可以根">
 <meta property="og:type" content="article">
 <meta property="og:title" content="野马优化器算法">
-<meta property="og:url" content="http://example.com/2022/06/08/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A8%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:url" content="https://away30.github.io/2022/06/08/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A8%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Away的博客">
-<meta property="og:description" content="开始   还记得那是一个普通的周末，为了应付老师的要求，不得不重新去看新的算法论文，然后就看到了这个野马优化器算法，2021年提出的，也算是一种缘分吧。 引言   算法由Iraj Naruei等人于2021年提出，主要模拟了野马种群的放牧、交配、领导者的交流和选择这三种行为。因其在CEC2017、CEC2019等测试函数上具有较好的实验结果，而在未来具有广泛的应用前景。   总体来说，马可">
+<meta property="og:description" content="开始   还记得那是一个普通的周末，为了应付老师的要求，不得不重新去看新的算法论文，然后就看到了这个野马优化器算法，2021年提出的，也算是一种缘分吧。  引言   算法由Iraj Naruei等人于2021年提出，主要模拟了野马种群的放牧、交配、领导者的交流和选择这三种行为。因其在CEC2017、CEC2019等测试函数上具有较好的实验结果，而在未来具有广泛的应用前景。   总体来说，马可以根">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/野马优化器.png">
-<meta property="og:image" content="http://example.com/img/野马优化器2.png">
-<meta property="og:image" content="http://example.com/img/野马优化器3.png">
-<meta property="og:image" content="http://example.com/img/野马优化器4.png">
+<meta property="og:image" content="https://away30.github.io/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A8.png">
+<meta property="og:image" content="https://away30.github.io/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A82.png">
+<meta property="og:image" content="https://away30.github.io/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A83.png">
+<meta property="og:image" content="https://away30.github.io/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A84.png">
 <meta property="article:published_time" content="2022-06-07T17:54:23.000Z">
-<meta property="article:modified_time" content="2022-11-05T12:01:57.842Z">
+<meta property="article:modified_time" content="2022-11-05T12:01:58.000Z">
 <meta property="article:author" content="Away">
 <meta property="article:tag" content="元启发算法">
 <meta property="article:tag" content="论文">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/野马优化器.png">
+<meta name="twitter:image" content="https://away30.github.io/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A8.png">
   
   
   <title>野马优化器算法 - Away的博客</title>
@@ -70,10 +70,14 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/cyberpunk.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"214d2359d0b900679e793b5f01e4af36","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"4UbDrO6nD598bOkJLSAfLfM1-gzGzoHsz","app_key":"dQbC8kGS31h3gBFOtX8VE9nx","server_url":"https://4ubdro6n.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"away30.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"214d2359d0b900679e793b5f01e4af36","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"4UbDrO6nD598bOkJLSAfLfM1-gzGzoHsz","app_key":"dQbC8kGS31h3gBFOtX8VE9nx","server_url":"https://4ubdro6n.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -239,7 +243,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      2.8k 字
     </span>
   
 
@@ -248,7 +252,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18 分钟
+      24 分钟
     </span>
   
 
@@ -294,63 +298,69 @@
               </p>
             
             <div class="markdown-body">
-              <h2 id="开始">开始</h2>
+              <h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
 <p>  还记得那是一个普通的周末，为了应付老师的要求，不得不重新去看新的算法论文，然后就看到了这个野马优化器算法，2021年提出的，也算是一种缘分吧。</p>
-<h2 id="引言">引言</h2>
+<h2 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言</h2>
 <p>  算法由Iraj Naruei等人于2021年提出，主要模拟了野马种群的放牧、交配、领导者的交流和选择这三种行为。因其在CEC2017、CEC2019等测试函数上具有较好的实验结果，而在未来具有广泛的应用前景。</p>
 <p>  总体来说，马可以根据其社会组织（领土和非领土）分为两类，在本篇文章，我们重点在于非领土类，它们是由稳定的家庭群体或后宫组成的马群，如小马驹、种马和母马。种马和母马都生活在一起，并在放牧中相互影响。同时为了防止乱伦，小马驹长大后必须离开他们的群体，加入其他群体建立自己的家庭。野马优化器就是使用放牧、交配、领导者的交流和选择这三种行为对问题进行优化。</p>
-<h2 id="主要步骤及过程">主要步骤及过程</h2>
-<p><strong>1.</strong> 创建初始种群并形成马群并选择领导者； <strong>2.</strong> 马的放牧行为； <strong>3.</strong> 马的交配行为； <strong>4.</strong> 由领导（种马）领导和领导小组； <strong>5.</strong> 领导交流和选拔。</p>
-<h3 id="创建初始种群">创建初始种群</h3>
-  对初始马群进行分组，如果N是总体的成员数，则组数为是G=[N×PS]. PS 是总种群中种马的百分比。所以我们根据组的数量分出领导者G（种马），其余成员（N - G），在这些组中平均分配。在算法开始时随机选择组的领导者，在后期阶段，根据组成员之间的适应度（最佳适应度函数）来选择他们。 <img src="/img/野马优化器.png" srcset="/img/loading.gif" lazyload />
-<center>
-种群初始化示意图
-</center>
-<img src="/img/野马优化器2.png" srcset="/img/loading.gif" lazyload />
-<center>
-原始种群形成群体的过程图
-</center>
-<h3 id="放牧行为">放牧行为</h3>
-<p>  如上一节所述，小马驹通常大部分时间都在他们的群体周围吃草。为了实现放牧行为，我们将种马视为放牧区的中心，群体成员在中心周围搜索（放牧）： <span class="math display">\[
-X_{G, j}^{i}=2 Z \cos (2 \pi R Z) \times\left(\text { Stallion }_{G, j}-X_{G, j}^{i}\right)+\text { Stallion }_{G, j}
-\]</span>   式中Stallion为领导者的位置，R 为[-2,2]内的随机数，主要控制个体与领导者间的角度，自适应机制Z 的计算方式为：</p>
-<p><span class="math display">\[
-P=\vec{R} 1&lt;T D R, I D X=(P==0) ; \quad Z=R 2 \Theta I D X+\vec{R} 3 \Theta(\sim I D X)
-\]</span></p>
+<h2 id="主要步骤及过程"><a class="markdownIt-Anchor" href="#主要步骤及过程"></a> 主要步骤及过程</h2>
+<p><strong>1.</strong> 创建初始种群并形成马群并选择领导者；<br />
+<strong>2.</strong> 马的放牧行为；<br />
+<strong>3.</strong> 马的交配行为；<br />
+<strong>4.</strong> 由领导（种马）领导和领导小组；<br />
+<strong>5.</strong> 领导交流和选拔。</p>
+<h3 id="创建初始种群"><a class="markdownIt-Anchor" href="#创建初始种群"></a> 创建初始种群</h3>
+<p>  对初始马群进行分组，如果N是总体的成员数，则组数为是G=[N×PS]. PS 是总种群中种马的百分比。所以我们根据组的数量分出领导者G（种马），其余成员（N - G），在这些组中平均分配。在算法开始时随机选择组的领导者，在后期阶段，根据组成员之间的适应度（最佳适应度函数）来选择他们。<br />
+<img src="/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A8.png" srcset="/img/loading.gif" lazyload alt=" " /></p>
+<center>种群初始化示意图</center>
+<p><img src="/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A82.png" srcset="/img/loading.gif" lazyload alt=" " /></p>
+<center>原始种群形成群体的过程图</center>
+<h3 id="放牧行为"><a class="markdownIt-Anchor" href="#放牧行为"></a> 放牧行为</h3>
+<p>  如上一节所述，小马驹通常大部分时间都在他们的群体周围吃草。为了实现放牧行为，我们将种马视为放牧区的中心，群体成员在中心周围搜索（放牧）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>X</mi><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow><mi>i</mi></msubsup><mo>=</mo><mn>2</mn><mi>Z</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><mi>R</mi><mi>Z</mi><mo stretchy="false">)</mo><mo>×</mo><mrow><mo fence="true">(</mo><msub><mtext> Stallion </mtext><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>−</mo><msubsup><mi>X</mi><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow><mi>i</mi></msubsup><mo fence="true">)</mo></mrow><mo>+</mo><msub><mtext> Stallion </mtext><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">X_{G, j}^{i}=2 Z \cos (2 \pi R Z) \times\left(\text { Stallion }_{G, j}-X_{G, j}^{i}\right)+\text { Stallion }_{G, j}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2577720000000001em;vertical-align:-0.383108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.874664em;"><span style="top:-2.4530000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.2577720000000001em;vertical-align:-0.383108em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord text"><span class="mord"> Stallion </span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.874664em;"><span style="top:-2.4530000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord text"><span class="mord"> Stallion </span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>  式中Stallion为领导者的位置，R 为[-2,2]内的随机数，主要控制个体与领导者间的角度，自适应机制Z 的计算方式为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><mover accent="true"><mi>R</mi><mo>⃗</mo></mover><mn>1</mn><mo>&lt;</mo><mi>T</mi><mi>D</mi><mi>R</mi><mo separator="true">,</mo><mi>I</mi><mi>D</mi><mi>X</mi><mo>=</mo><mo stretchy="false">(</mo><mi>P</mi><mo>=</mo><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo><mo separator="true">;</mo><mspace width="1em"/><mi>Z</mi><mo>=</mo><mi>R</mi><mn>2</mn><mi mathvariant="normal">Θ</mi><mi>I</mi><mi>D</mi><mi>X</mi><mo>+</mo><mover accent="true"><mi>R</mi><mo>⃗</mo></mover><mn>3</mn><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mo>∼</mo><mi>I</mi><mi>D</mi><mi>X</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P=\vec{R} 1&lt;T D R, I D X=(P==0) ; \quad Z=R 2 \Theta I D X+\vec{R} 3 \Theta(\sim I D X)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0054299999999998em;vertical-align:-0.0391em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663299999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.15216em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:1em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord">2</span><span class="mord">Θ</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.21633em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663299999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.15216em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mord">3</span><span class="mord">Θ</span><span class="mopen">(</span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span></span></p>
 <p>  其中P 是由0和1组成的向量，R1、R3均为[0,1]范围内均匀分布的随机向量，R2为[0,1]内一随机值。满足条件(P==0)的随机向量R1返回的IDX索引。Θ这个符号即点乘。TDR为由1线性递减至0的系数：</p>
-<p><span class="math display">\[
-TDR=1-iter\times （\frac{1}{maxiter} ）
-\]</span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mi>D</mi><mi>R</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>i</mi><mi>t</mi><mi>e</mi><mi>r</mi><mo>×</mo><mi mathvariant="normal">（</mi><mfrac><mn>1</mn><mrow><mi>m</mi><mi>a</mi><mi>x</mi><mi>i</mi><mi>t</mi><mi>e</mi><mi>r</mi></mrow></mfrac><mi mathvariant="normal">）</mi></mrow><annotation encoding="application/x-tex">TDR=1-iter\times （\frac{1}{maxiter} ）
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord cjk_fallback">（</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord cjk_fallback">）</span></span></span></span></span></p>
 <p>其中<em>iter</em>为当前迭代次数，<em>maxite</em>r为最大迭代次数。</p>
-<h3 id="交配行为">交配行为</h3>
+<h3 id="交配行为"><a class="markdownIt-Anchor" href="#交配行为"></a> 交配行为</h3>
 <p>  与其他动物相比，马的独特行为之一是将小马驹从群体中分离出来并与它们交配的行为。小马驹在青春期前离开这个群体，雄性小马驹加入单身马群，雌性小马驹加入另一个家庭群体，以达到青春期并寻找配偶。为了模拟马的交配行为，使用公式：</p>
-<p><span class="math display">\[
-X_{G, k}^{p}=\operatorname{Crossover}\left(X_{G, i}^{q}, X_{G, j}^{z}\right), i \neq j \neq k, q=z=\text { end }
-\]</span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>X</mi><mrow><mi>G</mi><mo separator="true">,</mo><mi>k</mi></mrow><mi>p</mi></msubsup><mo>=</mo><mi mathvariant="normal">Crossover</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><msubsup><mi>X</mi><mrow><mi>G</mi><mo separator="true">,</mo><mi>i</mi></mrow><mi>q</mi></msubsup><mo separator="true">,</mo><msubsup><mi>X</mi><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow><mi>z</mi></msubsup><mo fence="true">)</mo></mrow><mo separator="true">,</mo><mi>i</mi><mi mathvariant="normal">≠</mi><mi>j</mi><mi mathvariant="normal">≠</mi><mi>k</mi><mo separator="true">,</mo><mi>q</mi><mo>=</mo><mi>z</mi><mo>=</mo><mtext> end </mtext></mrow><annotation encoding="application/x-tex">X_{G, k}^{p}=\operatorname{Crossover}\left(X_{G, i}^{q}, X_{G, j}^{z}\right), i \neq j \neq k, q=z=\text { end }
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.219716em;vertical-align:-0.4374159999999999em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7823em;"><span style="top:-2.3986920000000005em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span style="top:-3.1809080000000005em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4374159999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.80002em;vertical-align:-0.65002em;"></span><span class="mop"><span class="mord mathrm">C</span><span class="mord mathrm">r</span><span class="mord mathrm">o</span><span class="mord mathrm">s</span><span class="mord mathrm">s</span><span class="mord mathrm">o</span><span class="mord mathrm" style="margin-right:0.01389em;">v</span><span class="mord mathrm">e</span><span class="mord mathrm">r</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">(</span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7823em;"><span style="top:-2.4064690000000004em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">i</span></span></span></span><span style="top:-3.1809080000000005em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">q</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.429639em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.714392em;"><span style="top:-2.4530000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord"> end </span></span></span></span></span></span></p>
 <p>  这里Xp_G_K表示种群k中个体p离群后再次进入种群k的个体位置，所以很明显，后面括号里的两个位置即为其父母的位置。可以看出，此阶段主要针对种群内适应度值最差的个体进行操作，目的即为提升种群多样性。</p>
-<h3 id="集团领导">集团领导</h3>
+<h3 id="集团领导"><a class="markdownIt-Anchor" href="#集团领导"></a> 集团领导</h3>
 <p>  领导者（种马）将带领其他组成员到合适的区域（水坑）。领导者（种马）也将争夺水坑，带领优势组首先使用水坑，直到优势组离开，其他组才能使用水坑。用公式模拟此行为：</p>
-<p><span class="math display">\[
-\overline{\text { Stallion }} G, j=\left\{\begin{array}{l}2 Z \cos (2 \pi R Z) \times\left(W H-\text { Stallion }_{G, j}\right)+W H, \text { rand }&gt;0.5 \\ 2 Z \cos (2 \pi R Z) \times\left(W H-\text { Stallion }_{G, j}\right)-W H, \text { rand } \leq 0.5\end{array}\right.
-\]</span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mtext> Stallion </mtext><mo stretchy="true">‾</mo></mover><mi>G</mi><mo separator="true">,</mo><mi>j</mi><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.15999999999999992em" columnalign="left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>2</mn><mi>Z</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><mi>R</mi><mi>Z</mi><mo stretchy="false">)</mo><mo>×</mo><mrow><mo fence="true">(</mo><mi>W</mi><mi>H</mi><mo>−</mo><msub><mtext> Stallion </mtext><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo fence="true">)</mo></mrow><mo>+</mo><mi>W</mi><mi>H</mi><mo separator="true">,</mo><mtext> rand </mtext><mo>&gt;</mo><mn>0.5</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>2</mn><mi>Z</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><mi>R</mi><mi>Z</mi><mo stretchy="false">)</mo><mo>×</mo><mrow><mo fence="true">(</mo><mi>W</mi><mi>H</mi><mo>−</mo><msub><mtext> Stallion </mtext><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo fence="true">)</mo></mrow><mo>−</mo><mi>W</mi><mi>H</mi><mo separator="true">,</mo><mtext> rand </mtext><mo>≤</mo><mn>0.5</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\overline{\text { Stallion }} G, j=\left\{\begin{array}{l}2 Z \cos (2 \pi R Z) \times\left(W H-\text { Stallion }_{G, j}\right)+W H, \text { rand }&gt;0.5 \\ 2 Z \cos (2 \pi R Z) \times\left(W H-\text { Stallion }_{G, j}\right)-W H, \text { rand } \leq 0.5\end{array}\right.
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.08888em;vertical-align:-0.19444em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.89444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord"> Stallion </span></span></span></span><span style="top:-3.81444em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mord mathdefault">G</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">{</span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord text"><span class="mord"> Stallion </span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord"> rand </span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord text"><span class="mord"> Stallion </span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord"> rand </span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 <p>  式中WH为栖息地的位置(也就是当前最优个体位置)，R、Z 的定义与前文相同。下图展示了领导者相对于栖息地的位置更新过程：</p>
-<img src="/img/野马优化器3.png" srcset="/img/loading.gif" lazyload />
-<center>
-领导者相对于栖息地的位置更新
-</center>
-<h3 id="领导交流与选拔">领导交流与选拔</h3>
+<p><img src="/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A83.png" srcset="/img/loading.gif" lazyload alt=" " /></p>
+<center>领导者相对于栖息地的位置更新</center>
+<h3 id="领导交流与选拔"><a class="markdownIt-Anchor" href="#领导交流与选拔"></a> 领导交流与选拔</h3>
 <p>  在开始，领导者是随机选择的。之后，比较组中马驹的适应度值选择领导者。为了模拟领导交流与选拔，使用了公式：</p>
-<p><span class="math display">\[
-\mathrm{Stallion} _{G,j}=\begin{cases}
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>X</mi><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext> if </mtext><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo stretchy="false">(</mo><msub><mi>X</mi><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo stretchy="false">)</mo><mo>&lt;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo stretchy="false">(</mo><msub><mrow><mi>S</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi>l</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mrow><mi>S</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi>l</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext> if </mtext><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo stretchy="false">(</mo><msub><mi>X</mi><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo stretchy="false">)</mo><mo>&gt;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo stretchy="false">(</mo><msub><mrow><mi>S</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi>l</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow><mrow><mi>G</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\mathrm{Stallion} _{G,j}=\begin{cases}
   X_{G,j} &amp; \text{ if } cost(X_{G,j})&lt; cost({Stallion} _{G,j})\\
   {Stallion} _{G,j}&amp; \text{ if } cost(X_{G,j})&gt; cost({Stallion} _{G,j})
 \end{cases}
-\]</span></p>
-此处cost函数为适应度函数，算法伪代码如下： <img src="/img/野马优化器4.png" srcset="/img/loading.gif" lazyload />
-<center>
-伪代码
-</center>
-<h2 id="总结">总结</h2>
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">S</span><span class="mord mathrm">t</span><span class="mord mathrm">a</span><span class="mord mathrm">l</span><span class="mord mathrm">l</span><span class="mord mathrm">i</span><span class="mord mathrm">o</span><span class="mord mathrm">n</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord"> if </span></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord"> if </span></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">G</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>此处cost函数为适应度函数，算法伪代码如下：<br />
+<img src="/img/%E9%87%8E%E9%A9%AC%E4%BC%98%E5%8C%96%E5%99%A84.png" srcset="/img/loading.gif" lazyload alt=" " /></p>
+<center>伪代码</center>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
 <p>  总体来说，野马优化器考虑的较为全面，涉及了精英引导、分群探索、群间交流等方面。不过从测试中来看其跳出局部最优值的能力仍有待提高。对于数据集的处理仍存在较大问题，迭代后期容易陷入局部极值的问题。</p>
 
             </div>
@@ -398,8 +408,8 @@ X_{G, k}^{p}=\operatorname{Crossover}\left(X_{G, i}^{q}, X_{G, j}^{z}\right), i 
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/12/python%E7%88%AC%E8%99%AB%E4%B9%8Bbs4%E8%A7%A3%E6%9E%90%E5%92%8Cxpath%E8%A7%A3%E6%9E%90/">
-                        <span class="hidden-mobile">bs4解析和xpath解析</span>
+                      <a href="/2022/03/21/%E6%AD%8C%E8%AF%8D%E9%9B%86%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">
+                        <span class="hidden-mobile">歌词集（持续更新）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -534,127 +544,10 @@ X_{G, k}^{p}=\operatorname{Crossover}\left(X_{G, i}^{q}, X_{G, j}^{z}\right), i 
 <div class="text-center py-1">   
   <div>
     <span>Copyright © 2022</span></a>
-    <a href="https://chenleqi.com/" target="_blank" rel="nofollow noopener">
+    <a href="/">
      <span>Away‘s space</span></a>    <br>
   </div>
 </footer>
-
-<!-- SCRIPTS -->
-
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js" ></script>
-  
-
-
-
-
-  <script defer src="/js/leancloud.js" ></script>
-
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-  
-
-  
-    <!-- KaTeX -->
-    <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.15.2/katex.min.css" />
-  
-
-
-
-
-
-
-
-
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?214d2359d0b900679e793b5f01e4af36";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
-
-
 
 
   <!-- SCRIPTS -->
@@ -766,6 +659,10 @@ X_{G, k}^{p}=\operatorname{Crossover}\left(X_{G, i}^{q}, X_{G, j}^{z}\right), i 
   
 
 
+
+
+  
+<script src="/js/cyberpunk.js"></script>
 
 
 
